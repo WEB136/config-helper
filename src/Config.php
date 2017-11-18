@@ -2,7 +2,6 @@
 
 namespace web136\config_helper;
 
-
 class Config {
 
 	/**@property array $checkedFiles нужно для того, чтобы включать каждый файл не более одного раза */
@@ -55,7 +54,10 @@ class Config {
 	 */
 	protected function checkFile($path = '') {
 
-		if (!empty($path) && file_exists($path) && is_readable($path) && is_file($path)) {
+		$path = realpath($path);
+
+		if (!empty($path) && !in_array($path, $this->checkedFiles) && file_exists($path) && is_readable($path) && is_file($path)) {
+			$this->checkedFiles[] = $path;
 			return true;
 		}
 		else {
@@ -92,7 +94,7 @@ class Config {
 	 */
 	protected function setConfig( $additionalConfig = [] ) {
 		if(is_array($additionalConfig) && !empty($additionalConfig)){
-			$this->config = array_merge_recursive($this->config, $additionalConfig);
+			$this->config = array_replace_recursive($this->config, $additionalConfig);
 		}
 	}
 
