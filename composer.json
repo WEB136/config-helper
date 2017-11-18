@@ -5,7 +5,7 @@
   "license": "free",
   "autoload": {
     "psr-4": {
-      "web136\\config_helper":"src/"
+      "web136\\config_helper\\":"src/"
     }
   },
   "authors": [
