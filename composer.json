@@ -1,0 +1,17 @@
+{
+  "name": "web136/config-helper",
+  "description": "Make including configuration file more comfort",
+  "minimum-stability": "stable",
+  "license": "free",
+  "autoload": {
+    "psr-4": {
+      "web136\\config-helper":"src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Mitin Aleksandr",
+      "email": "jamanphonehtc@gmail.com"
+    }
+  ]
+}
