@@ -2,7 +2,16 @@
 
 namespace web136\config_helper;
 
+/**
+ * Class Config
+ * Класс предназначен для получения массива конфигурации из нескольких файлов.
+ *
+ * @package web136\config_helper
+ * @version 1.01
+ */
 class Config {
+
+	const VERSION = '1.01';
 
 	/**@property array $checkedFiles нужно для того, чтобы включать каждый файл не более одного раза */
 	protected $checkedFiles = [];
@@ -20,7 +29,7 @@ class Config {
 	}
 
 	/**
-	 * метод для добавления новых файлов конфигурации
+	 * Добавляет новых файлов конфигурации
 	 * @param array|string $files адрес либо массив адресов файлов для включения
 	 */
 	public function addFiles($files = '') {
